@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cripto Tracker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <ul>
+          <li>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                align-items: center;
+              "
+            >
+              <img
+                id="logo"
+                src="{{ url_for('static', filename='img/bitcoin.svg') }}"
+                height="22vw"
+              />
+              <h3 style="font-size: 20px; font-weight: lighter; color: white">
+                BITCOIN
+              </h3>
+            </div>
+            <h2 style="font-size: 20px; font-weight: lighter; color: white">
+              R$:
+              <span id="btcValor" style="font-size: 32px; color: white"></span>
+            </h2>
+            <canvas id="chartBtc"></canvas>
+          </li>
+          <li>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                align-items: center;
+              "
+            >
+              <img
+                id="logo"
+                src="{{ url_for('static', filename='img/ethereum.svg') }}"
+                height="28vw"
+              />
+              <h3 style="font-size: 20px; font-weight: lighter; color: white">
+                ETHEREUM
+              </h3>
+            </div>
+            <h2 style="font-size: 20px; font-weight: lighter; color: white">
+              R$:
+              <span id="ethValor" style="font-size: 32px; color: white"></span>
+            </h2>
+            <div id="chartContainer">
+              <canvas id="chartEth"></canvas>
+            </div>
+          </li>
+          <li>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                align-items: center;
+              "
+            >
+              <img
+                id="logo"
+                src="{{ url_for('static', filename='img/solana.svg') }}"
+                height="28vw"
+              />
+              <h3 style="font-size: 20px; font-weight: lighter; color: white">
+                SOLANA
+              </h3>
+            </div>
+            <h2 style="font-size: 20px; font-weight: lighter; color: white">
+              R$:
+              <span id="solValor" style="font-size: 32px; color: white"></span>
+            </h2>
+            <canvas id="chartSol"></canvas>
+          </li>
+          <li>
+            <div class="right">
+              <h3
+                style="
+                  font-size: 20px;
+                  font-weight: lighter;
+                  color: white;
+                  display: flex;
+                  align-items: center;
+                "
+              >
+                MARKET CAP
+              </h3>
+              <div class="donutGrafico">
+                <canvas id="marketCapRoda"></canvas>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="downLeft">
+        <div style="width: 80%; margin: auto">
+          <canvas id="graficoComparativo"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
